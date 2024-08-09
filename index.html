@@ -15,9 +15,7 @@
 
 
 
-    <script>
-
-
+<script>
 
 //Q1.
 
@@ -82,7 +80,7 @@ promise.then((message) => {
        //Q3.
 
 
-		const book = {
+const book = {
     title: 'To Kill a Mockingbird',
     author: 'Harper Lee',
     year: 1960,
@@ -102,9 +100,14 @@ promise.then((message) => {
 
 
 console.log(book.getSummary()); 
-
-
 console.log(book.isClassic()); 
+	    
+book.pages = 281;
+book['ISBN'] = '978-0060935467';
+
+console.log(book);
+
+
 
 
 
