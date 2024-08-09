@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root"></div>
+    
+
+
+
+
+
+
+
+    <script>
+
+
+
+//Q1.
+
+const url = 'https://real-time-amazon-data.p.rapidapi.com/products-by-category?category_id=2478868012&page=1&country=US&sort_by=RELEVANCE&product_condition=ALL&is_prime=false';
+const options = {
+	method: 'GET',
+	headers: {
+		'x-rapidapi-key': 'cb435a0039msh2b1c3c0149fcf95p174a2ejsn12affb6e5119',
+		'x-rapidapi-host': 'real-time-amazon-data.p.rapidapi.com'
+	}
+};
+async function name(){
+
+try {
+	const response = await fetch(url, options);
+	const result = await response.json();
+	console.log(result);
+} catch (error) {
+	console.error(error);
+}
+}
+name();
+
+
+
+
+
+//Q2.
+
+
+const promise = new Promise((resolve, reject) => {
+    setTimeout(() => {
+        console.log('The promise has resolved after 3 seconds.');
+        resolve('Success!');
+    }, 3000);
+});
+
+
+promise.then((message) => {
+    console.log(message);
+});
+
+
+
+
+ //After MOdify
+
+// const promise = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         console.error('The promise has rejected after 3 seconds.');
+//         reject(new Error('Something went wrong!'));
+//     }, 3000);
+// });
+
+
+// promise.catch((error) => {
+//     console.error('Caught an error:', error.message);
+// });
+
+
+
+       //Q3.
+
+
+		const book = {
+    title: 'To Kill a Mockingbird',
+    author: 'Harper Lee',
+    year: 1960,
+    genre: 'Fiction',
+
+
+    getSummary() {
+        return `${this.title} by ${this.author}, published in ${this.year}. Genre: ${this.genre}.`;
+    },
+
+  
+    isClassic() {
+        const currentYear = new Date().getFullYear();
+        return (currentYear - this.year) > 50;
+    }
+};
+
+
+console.log(book.getSummary()); 
+
+
+console.log(book.isClassic()); 
+
+
+
+
+    </script>
+</body>
+</html>
